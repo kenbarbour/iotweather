@@ -1,0 +1,19 @@
+{
+    "name": "kenbarbour/weather_server",
+    "type": "project",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Ken Barbour",
+            "email": "kenbarbour@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^3.6"
+    },
+    "scripts": {
+      "post-install-cmd": "@mkenv",
+      "post-update-cmd": "@mkenv",
+      "mkenv": "cp example.env .env --no-clobber"
+    }
+}
