@@ -1,8 +1,8 @@
 <?php
 
 // Initialize
-require_once __DIR__.'/vendor/autoload.php'; // Autoload installed libraries
-Dotenv\Dotenv::create(__DIR__)->load();      // Load .env file
+require_once __DIR__ . '/../vendor/autoload.php'; // Autoload installed libraries
+Dotenv\Dotenv::create(__DIR__.'/../')->load();      // Load .env file
 header("Content-Type: application/json");  // Notify browser we will be using JSON format
 
 if (getenv('TIMEZONE'))

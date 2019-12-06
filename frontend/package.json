@@ -1,0 +1,25 @@
+{
+  "name": "iot_weather-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bulma": "^0.8.0",
+    "mithril": "^2.0.4",
+    "css-loader": "^3.2.1",
+    "fibers": "^4.0.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
