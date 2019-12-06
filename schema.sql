@@ -1,9 +1,3 @@
-/*
-SQLyog Ultimate
-MySQL - 10.3.17-MariaDB : Database - sensors
-*********************************************************************
-*/
-
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
@@ -18,7 +12,8 @@ CREATE TABLE `weather` (
   `timestamp` datetime NOT NULL DEFAULT current_timestamp(),
   `temperature` double DEFAULT NULL,
   `pressure` double DEFAULT NULL,
-  `humidity` double DEFAULT NULL
+  `humidity` double DEFAULT NULL,
+  `wind_speed` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

@@ -24,7 +24,7 @@ try {
 
 // Table config
 $table = 'weather';
-$fields = ['temperature', 'pressure', 'humidity'];
+$fields = ['temperature', 'pressure', 'humidity', 'wind_speed'];
 
 
 
@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $fields_str = implode(', ', $fields);
   $data = [];
   foreach ($fields as $field) {
-    if (!isset($_POST[$field])) error_response("Fields {$fields_str} are required.");
-    $data[$field] = $_POST[$field];
+    if (!isset($_POST[$field])) $data[$field] = NULL;
+    else $data[$field] = $_POST[$field];
   }
 
   $sql = "INSERT INTO weather ({$fields_str}) VALUES (:".implode(",:", $fields).")";
