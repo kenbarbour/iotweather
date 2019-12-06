@@ -5,6 +5,9 @@ require_once __DIR__.'/vendor/autoload.php'; // Autoload installed libraries
 Dotenv\Dotenv::create(__DIR__)->load();      // Load .env file
 header("Content-Type: application/json");  // Notify browser we will be using JSON format
 
+if (getenv('TIMEZONE'))
+  date_default_timezone_set(getenv('TIMEZONE'));
+
 // Database
 $dbcfg = (object)[
   'host' => getenv('DB_HOST'),
@@ -53,6 +56,8 @@ if ($query->rowCount() == 0) {
   exit();
 }
 $row = $query->fetchObject();
+$row->time_zone = date_default_timezone_get();
+$row->local_time = date("c",strtotime($row->timestamp." UTC"));
 echo json_encode($row);
 exit();
 
