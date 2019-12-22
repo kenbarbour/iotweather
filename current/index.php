@@ -50,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Get the current weather
+$db->query('SET @@session.time_zone=\'+00:00\';');
 $query = $db->query('SELECT * FROM weather ORDER BY `timestamp` DESC LIMIT 1;');
 if ($query->rowCount() == 0) {
   http_response_code(204);

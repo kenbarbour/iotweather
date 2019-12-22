@@ -60,16 +60,18 @@ var CurrentView = {
   },
 
   formatted_local_time: function() {
-		console.log(Weather.current.timestamp);
-		var date = new Date(Weather.current.timestamp);
+		console.log("Local time from server:",Weather.current.local_time);
+		var date = new Date(Weather.current.local_time);
+		console.log(date);
 		var month = months[date.getMonth()];
 		var hour = date.getHours() % 12;
-		var is_pm = date.getHours() >= 12;
-		var tz_offset = date.getTimezoneOffset() / -60 * 100;
+		console.log(date.getHours());
+		var is_pm = (date.getHours() >= 12);
+		var tz_offset = '<span class="has-text-grey-lighter">UTC ' + (date.getTimezoneOffset() / -60 * 100) + '</span>';
 
-		return "" + date.getDate() + " " + month +
+		return "" + month + " " + date.getDate() + ", " +
 			hour + ":" + date.getMinutes() + " " +(is_pm ? 'PM' : 'AM') +
-			" " + tz_offset 
+			" " //+ tz_offset 
 			;
   }
 }
