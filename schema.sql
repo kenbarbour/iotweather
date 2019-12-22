@@ -9,7 +9,7 @@
 /*Table structure for table `weather` */
 
 CREATE TABLE `weather` (
-  `timestamp` datetime NOT NULL DEFAULT current_timestamp(),
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
   `temperature` double DEFAULT NULL,
   `pressure` double DEFAULT NULL,
   `humidity` double DEFAULT NULL,
